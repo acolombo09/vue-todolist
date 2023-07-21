@@ -1,0 +1,19 @@
+.todolist-item{
+
+}
+
+/* che compare solo quando ci passi sopra col mouse (solo estetico) */
+.todolist-item .todolist-item-remove-btn{
+  opacity: 0;
+  transition: opacity .3s;
+}
+
+.todolist-item:hover .todolist-item-remove-btn{
+  opacity: 1;
+}
+
+.todoItem-color{
+  width: 10px;
+  height: 30px;
+  display: inline-block;
+}
