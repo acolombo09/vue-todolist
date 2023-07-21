@@ -21,7 +21,7 @@
     <header>
       <div class="container-fluid my-5 text-center">
         <div class="row my-5">
-          <h1 class="my-5 text-white">My Todo List</h1>
+          <h1 class="my-5 display-4 text-white">My To-Do List</h1>
         </div>
       </div>
     </header>
@@ -29,24 +29,24 @@
       <div class="container-fluid">
         <div class="row justify-content-center align-items-center">
           <div class="col-md-6">
-            <div class="mb-3 input group">
-              <input type="text" class="form-control form-control-lg w-100 mb-3"
-              placeholder="Cosa ti vuoi ricordare?"
-              v-model="newTodoItem.text"
-              @keyup.enter="addTodoItem">
-      
+            <div class="mb-3 input-group input-group-lg">
+              <input type="text" class="form-control w-75"
+                placeholder="Cosa ti vuoi ricordare?"
+                v-model="newTodoItem.text"
+                @keyup.enter="addTodoItem">
               <input type="color" class="form-control form-control-lg"
-              v-model="newTodoItem.color">
-      
+                v-model="newTodoItem.color">
               <button class="btn btn-success" @click="addTodoItem">
-                <i class="fa-solid fa-plus"></i>
+                <i class="fa-solid fa-plus fs-4"></i>
               </button>
             </div>
             <div class="card shadow-lg border rounded-4 overflow-hidden bg-white mb-5">
               <ul class="list-group list-group-flush" v-if="todoList.length > 0">
                 <li class="list-group-item py-3 fs-4 d-flex align-items-center" 
                   v-for="todoItem in todoList">
-                  <div class="todoItem-color" v-bind:style="{backgroundColor: todoItem.color, marginRight: '5px'}"></div>
+                  <span class="todoItem-color" 
+                  v-bind:style="{backgroundColor: todoItem.color, marginRight: '5px'}">
+                  </span>
                   
                   <div class="flex-grow-1">
                     {{ todoItem.id }} - {{ todoItem.text }}
