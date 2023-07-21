@@ -1,5 +1,11 @@
-.todolist-item{
+body{
+  background-image: url("../img/pexels-todolist.jpg");
+  background-position: center;
+  background-size: cover;
+}
 
+.todolist-item{
+  
 }
 
 /* che compare solo quando ci passi sopra col mouse (solo estetico) */
