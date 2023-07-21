@@ -32,25 +32,27 @@ const { createApp } = Vue
 const app = createApp({
   data(){
     return {
+      // Inizializzo il prossimo ID a 4, poiché hai già tre elementi nella todoList
+      nextId: 4,
       newTodoItem: {
-        id: 100,
+        id: "",
         text: "",
         color: "#FF00FF",
       },
       todoList: [
         { 
-          id: 101,
-          text: "primo task",
+          id: 1,
+          text: "prima task",
           color: "#15C632",
         },
         { 
-          id: 102,
-          text: "secondo task",
+          id: 2,
+          text: "seconda task",
           color: "#1562C6",
         },
         { 
-          id: 103,
-          text: "terzo task",
+          id: 3,
+          text: "terza task",
           color: "#66A2C7",
         },
       ],
@@ -62,8 +64,10 @@ const app = createApp({
       // creiamo una copia dell'oggetto (...) in modo da perdere la reattività
       // altrimenti mi modifica tutti i testi di ogni task
       // simultaneamente
+      // Assegniamo l'ID progressivo al newTodoItem e lo incrementiamo per la prossima task
+      this.newTodoItem.id = this.nextId++;
       const itemClone = {...this.newTodoItem};
-      this.todoList.push(this.itemClone);
+      this.todoList.push(itemClone);
     },
     itemsToShow(){
       return this.todoList.filter((todoItem) => todoItem.deleted === false);

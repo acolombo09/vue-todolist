@@ -40,13 +40,13 @@
                 <i class="fa-solid fa-plus fs-4"></i>
               </button>
             </div>
-            <div class="card shadow-lg border rounded-4 overflow-hidden bg-white mb-5">
+            <div class="shadow-lg rounded-3 overflow-hidden bg-white mb-5">
               <ul class="list-group list-group-flush" v-if="todoList.length > 0">
-                <li class="list-group-item py-3 fs-4 d-flex align-items-center" 
+                <li class="list-group-item todolist-item py-3 fs-4 d-flex align-items-center" 
                   v-for="todoItem in todoList">
-                  <span class="todoItem-color" 
+                  <div class="todoItem-color" 
                   v-bind:style="{backgroundColor: todoItem.color, marginRight: '5px'}">
-                  </span>
+                  </div>
                   
                   <div class="flex-grow-1">
                     {{ todoItem.id }} - {{ todoItem.text }}
