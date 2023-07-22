@@ -43,18 +43,18 @@
             <div class="shadow-lg rounded-3 overflow-hidden bg-white mb-5">
               <ul class="list-group list-group-flush" v-if="todoList.length > 0">
                 <li class="list-group-item todolist-item py-3 fs-4 d-flex align-items-center" 
-                  v-for="todoItem in todoList">
+                  v-for="todoItem in todoList"
+                  v-bind:class="{'text-decoration-line-through' : todoItem.done}"
+                  @click="toggleDone(todoItem)">
                   <div class="todoItem-color" 
-                  v-bind:style="{backgroundColor: todoItem.color, marginRight: '5px'}">
+                  v-bind:style="{backgroundColor: todoItem.color, marginRight: '15px'}">
                   </div>
-                  
                   <div class="flex-grow-1">
                     {{ todoItem.id }} - {{ todoItem.text }}
                   </div>
-      
                   <button class="btn btn-link text-danger todolist-item-remove-btn"
                       @click="deleteTodoItem(todoItem.id)">
-                    <i class="fa-solid fa-trash"></i>
+                    <i class="fa-regular fa-circle-xmark"></i>
                   </button>
                 </li>
               </ul>
